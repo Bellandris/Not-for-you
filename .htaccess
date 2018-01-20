@@ -1,0 +1,13 @@
+AddDefaultCharset utf-8
+AddType text/x-component .htc
+
+RewriteEngine on
+RewriteRule	^login/?$							?login [L]
+RewriteRule	^forgotten/?$						?restorepass [L]
+RewriteRule	^hash/([^/]*)/?$					?hash=$1 [L]
+RewriteRule	^completepayment/([^/]*)/?$			?completepayment=$1 [L]
+
+RewriteRule	^account/(.*)/(.*).xml$				?account_info=$2&realmID=$1 [L]
+RewriteRule	^character/(.*)/(.*).xml$			?character_info=$2&realmID=$1 [L]
+
+#ErrorDocument 404 /404.htm
